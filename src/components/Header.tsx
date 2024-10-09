@@ -8,5 +8,4 @@ export function Header() {
             <Link to="/characters">Characters</Link>
         </div>
     )
-
 }
