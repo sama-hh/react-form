@@ -1,6 +1,6 @@
 import {Character} from "../types/RickAndMortyCharacter.ts";
 import CharacterCard from "./CharacterCard.tsx";
-import "./CharacterGallery.css";
+import "../styles/CharacterGallery.css";
 
 type CharacterGalleryProps = {
     characters: Character[];

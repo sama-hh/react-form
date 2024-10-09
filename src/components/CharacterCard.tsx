@@ -1,13 +1,20 @@
 import {Character} from "../types/RickAndMortyCharacter.ts";
-import "./CharacterCard.css";
+import "../styles/CharacterCard.css";
+import {useNavigate} from "react-router-dom";
 
 type CharacterCardProps = {
     character: Character;
 }
 
 export default function CharacterCard(props: Readonly<CharacterCardProps>) {
+    const navigate = useNavigate();
+
+    const handleClick = (id: number) => {
+        navigate(`/characters/${id}`)
+    }
+
     return (
-        <div className="character-card">
+        <div className="character-card" onClick={() => handleClick(props.character.id)}>
             <img src={props.character.image} alt={props.character.name}/>
             <div className="character-card-info">
                 <h3>{props.character.name}</h3>
