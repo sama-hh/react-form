@@ -5,12 +5,12 @@ export type Character = {
     species: string,
     type: string,
     gender: string,
-    origin: Origin,
-    location: Location,
-    image: string,
-    episode: string[],
-    url: string,
-    created: string
+    origin?: Origin,
+    location?: Location,
+    image?: string,
+    episode?: string[],
+    url?: string,
+    created?: string
 }
 
 export type Origin = {

@@ -15,7 +15,7 @@ export default function CharacterCard(props: Readonly<CharacterCardProps>) {
 
     return (
         <div className="character-card" onClick={() => handleClick(props.character.id)}>
-            <img src={props.character.image} alt={props.character.name}/>
+            <img src={props.character.image} alt="Image"/>
             <div className="character-card-info">
                 <h3>{props.character.name}</h3>
                 <p>Species: {props.character.species}</p>

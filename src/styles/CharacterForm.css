@@ -1,0 +1,43 @@
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px; /* Padding inside the form */
+    border: 1px solid #ccc; /* Light border around the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Style for form labels */
+label {
+    display: block; /* Display labels as block elements */
+    margin-bottom: 5px; /* Space below labels */
+    font-weight: bold; /* Bold font for labels */
+}
+
+/* Style for input fields */
+input {
+    padding: 10px;
+    width: 80%;/* Padding inside the input fields */
+    margin-bottom: 15px; /* Space below input fields */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 4px; /* Rounded corners for input fields */
+    font-size: 16px; /* Font size for input text */
+}
+
+/* Style for the submit button */
+button {
+    background-color: #007BFF; /* Blue background for the button */
+    color: white; /* White text for the button */
+    padding: 10px 15px; /* Padding inside the button */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for button text */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the submit button */
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
