@@ -11,23 +11,24 @@ import {Character} from "./types/RickAndMortyCharacter.ts";
 
 export default function App() {
     const [characters, setCharacters] = useState<Character[]>([]);
+    const [info, setInfo] = useState({});
+    const [page, setPage] = useState<number>(1);
 
     const getCharacters = function () {
-        axios.get("https://rickandmortyapi.com/api/character")
-            .then(
-                (response) => {
-                    setCharacters(response.data.results)
+        axios.get(`https://rickandmortyapi.com/api/character?page=${page}`)
+            .then((response) => {
+                    setCharacters(response.data.results);
+                    setInfo(response.data.info);
                 }
             )
-            .catch(
-                () => {
+            .catch(() => {
                     console.log("API request failed.");
                 }
             )
     }
     useEffect(
         getCharacters,
-        []
+        [page]
     );
 
     return (
@@ -35,7 +36,7 @@ export default function App() {
             <Header/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="/characters" element={<Characters characters={characters}/>}/>
+                <Route path="/characters" element={<Characters info={info} setPage={setPage} characters={characters}/>}/>
                 <Route path="/characters/:id" element={<CharacterDetailCard characters={characters}/>}/>
                 <Route path="/characters/add" element={<CharacterForm characters={characters}/>}/>
             </Routes>
