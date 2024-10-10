@@ -1,7 +1,6 @@
 import {ChangeEvent, FormEvent, useState} from "react";
 import {Character} from "../types/RickAndMortyCharacter.ts";
 import "../styles/CharacterForm.css"
-import {characters} from "../Characters.ts";
 import Logo from "../../public/vite.svg";
 
 const InitialCharacterState = {
@@ -14,14 +13,16 @@ const InitialCharacterState = {
     image: Logo
 }
 
-export function CharacterForm() {
+export function CharacterForm(props: {
+    characters: Character[]
+}) {
     const [character, setCharacter] = useState<Character>(InitialCharacterState);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = event.target;
+        const {name, value} = event.target;
         setCharacter(prevState => ({
             ...prevState,
-            [name] : value,
+            [name]: value,
         }));
 
     }
@@ -29,7 +30,7 @@ export function CharacterForm() {
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         console.log(character)
-        characters.push(character);
+        props.characters.push(character);
         setCharacter(InitialCharacterState);
     }
 
