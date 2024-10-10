@@ -8,6 +8,7 @@ import {CharacterForm} from "./components/CharacterForm.tsx";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import {Character} from "./types/RickAndMortyCharacter.ts";
+import {RickAndMortyResponse} from "./types/RickAndMortyResponse.ts";
 
 export default function App() {
     const [characters, setCharacters] = useState<Character[]>([]);
@@ -15,7 +16,7 @@ export default function App() {
     const [page, setPage] = useState<number>(1);
 
     const getCharacters = function () {
-        axios.get(`https://rickandmortyapi.com/api/character?page=${page}`)
+        axios.get<RickAndMortyResponse>(`https://rickandmortyapi.com/api/character?page=${page}`)
             .then((response) => {
                     setCharacters(response.data.results);
                     setInfo(response.data.info);

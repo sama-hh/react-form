@@ -10,6 +10,6 @@ export function CharacterDetailCard(props: {
     const getCharacter: Character | undefined = props.characters
         .find((character) => character.id.toString() === id);
 
-    return getCharacter ? <CharacterCard key={getCharacter.name} character={getCharacter}/> :
+    return getCharacter ? <CharacterCard key={getCharacter.id} character={getCharacter}/> :
         <p>Character not found</p>;
 }
